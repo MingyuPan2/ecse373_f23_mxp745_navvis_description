@@ -165,4 +165,4 @@ To view robot WITHOUT the joint_gui:
 
 To NOT use .xacro file, add:
 
-	... use_xacro:=true ... &
+	... use_xacro:=false ... &
