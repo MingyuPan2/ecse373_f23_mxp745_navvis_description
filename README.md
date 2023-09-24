@@ -41,12 +41,13 @@ This ROS Package that depends on rviz, urdf, xacro, sensor_msgs, and geometry_ms
 For building the foundation, just copy the following commands:
 
 	<robot name="navvis">
-	<link name="base">
-	<visual>
-	<geometry>
-	<box size="0.45 0.78 1.92" />
-	</geometry>
-	</visual>
+		<link name="base">
+			<visual>
+				<origin xyz="0.0 0.0 0.96" rpy="0.0 0.0 0.0" />
+			<geometry>
+				<box size="0.45 0.78 1.92" />
+			</geometry>
+			</visual>
 	<collision>
 	<geometry>
 	<box size="0.45 0.78 1.92" />
@@ -54,4 +55,5 @@ For building the foundation, just copy the following commands:
 	</collision>
 	</link>
 	</robot>
+
 
