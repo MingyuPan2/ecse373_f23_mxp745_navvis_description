@@ -46,11 +46,12 @@ For building the foundation, just copy the following commands:
 	<geometry>
 	<box size="0.45 0.78 1.92" />
 	</geometry>
-</visual>
-<collision>
-<geometry>
-<box size="0.45 0.78 1.92" />
-</geometry>
-</collision>
-</link>
-</robot>
+	</visual>
+	<collision>
+	<geometry>
+	<box size="0.45 0.78 1.92" />
+	</geometry>
+	</collision>
+	</link>
+	</robot>
+
