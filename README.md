@@ -15,11 +15,11 @@ Lab 2 Link: [Laboratory #2_20230913_cert.pdf](https://canvas.case.edu/courses/38
 Follow the bulleted list describing the geometry of the visual and collision elements of the Navvis platform. The names of the links are critical. 
 
 The dimensions are listed below:
-base (parent): box size 0.45 m x 0.78 m x 1.98 m
-laser_vert_bottom (child): box size 62 mm x 62 mm x 87 mm
-laser_vert_top_right (child): box size 62 mm x 62 mm x 87 mm
-laser_vert_top_left (child): box size 62 mm x 62 mm x 87 mm
-laser_horiz (child): cylinder radius 52 mm length 72 mm
+base (parent): box size 0.45 m x 0.78 m x 1.98 mm <br />
+laser_vert_bottom (child): box size 0.062 mm x 0.062 mm x 0.087 mm <br />
+laser_vert_top_right (child): box size 0.062 mm x 0.062 mm x 0.087 mm <br />
+laser_vert_top_left (child): box size 0.062 mm x 0.062 mm x 0.087 mm <br />
+laser_horiz (child): cylinder radius 0.052 mm x length 0.072 mm <br />
 
 For position and orientation parameters, follow the graph on P2.
 
