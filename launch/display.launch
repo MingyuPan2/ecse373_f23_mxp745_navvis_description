@@ -1,0 +1,23 @@
+<launch>
+	<?ignore
+	<arg name = "lab2robot" default = "urdf_from_xacro.urdf" />
+	<arg name = "lab2robotfile" default = "$(find navvis_description)/urdf/$(arg urdf_from_xacro)" />
+	<param name = "robot_description" textfile = "$(arg lab2robotfile)" />
+	<node pkg = "robot_state_publisher" type = "robot_state_publisher" name = "robot_state_publisher" />
+	<node pkg = "rviz" type = "rviz" name = "rviz" args = "-d $(find navvis_description)/config/config.rviz" required = "true" />
+	?>
+
+	<arg name="use_xacro" default="false" />
+	<arg name="joint_gui" default="true" />
+	<arg name="rviz_config_file" default="$(find navvis_description)/config/config.rviz" />
+	<arg if="$(arg use_xacro)" name="filename" default="lab2robot.xacro" />
+	<arg unless="$(arg use_xacro)" name="filename" default="urdf_from_xacro.urdf" />
+	<arg name="file" default="$(find navvis_description)/urdf/$(arg filename)" />	
+	<param if="$(arg use_xacro)" name="robot_description" command="$(find xacro)/xacro $(arg file)" /> 
+	<param unless="$(arg use_xacro)" name="robot_description" textfile="$(arg file)" />
+	<node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" /> 
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_config_file)" required = "true" />
+	<node pkg ="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher_gui" if="$(arg joint_gui)" />
+	<node pkg ="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" unless="$(arg joint_gui)" />
+	
+</launch>
