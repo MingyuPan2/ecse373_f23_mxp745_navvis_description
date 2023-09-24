@@ -21,15 +21,15 @@ laser_vert_top_right (child): box size 0.062 mm x 0.062 mm x 0.087 mm <br />
 laser_vert_top_left (child): box size 0.062 mm x 0.062 mm x 0.087 mm <br />
 laser_horiz (child): cylinder radius 0.052 mm x length 0.072 mm <br />
 
-For position and orientation parameters, follow the graph on P2.
+For all position and orientation parameters, follow the graph on P2.
 
 ### Creating a URDF File
 
-#### ROS link to URDF
+#### -ROS link to URDF-
 
 The authoritative reference for the XML elements and attributes used in URDF : [XML](http://wiki.ros.org/urdf/XML/)
 
-#### Create appropriate ROS package
+#### -Create appropriate ROS package-
 
 This ROS Package that depends on rviz, urdf, xacro, sensor_msgs, and geometry_msgs.
 
@@ -80,7 +80,7 @@ Child links are defined with respect to the base link with its origin offset. Ot
 		<origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0" />
 	</joint>
 	
-#### Add wheels
+#### -Add wheels-
 
 Model the wheels and all their respective joints using the same method above. For exact parameters, follow P2 and P10 on Lab 2 pdf.
 
@@ -99,7 +99,7 @@ To generate a wheel, add and MODIFY the following command to match names:
 
 	<xacro:xacro_name side="left" reflect="1" />
 
-#### URDF checker
+#### -URDF checker-
 
 Use this tool to check the XML of a URDF file. Read the responses to fix any issues  with the URDF XML file.
 
@@ -110,9 +110,9 @@ Use this tool to check the XML of a URDF file. Read the responses to fix any iss
 	
 Move on if everything is ok.
 
-### Create Appropriate Launch File
+## Create Appropriate Launch File
 
-In the package directory, create a folder named `launch`, then create a `display.launch` file in the `launch` folder. The .xacro file WILL NOT be used by default. The joint_gui WILL be used by default. Follow the code below to include everything in the file:
+In the package directory, create a folder named `launch`, then create a `display.launch` file in the `launch` folder. The .xacro file WILL NOT be used by default. The joint_gui WILL be used by default. Some code in <?ignore ... ?> were included for reference. Follow the code below to include everything in the file:
 
 	<launch>
 		<?ignore
@@ -137,10 +137,32 @@ In the package directory, create a folder named `launch`, then create a `display
 		<node pkg ="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" unless="$(arg joint_gui)" />
 	</launch>
 
-### View robot in RVIZ
+## Generating URDF From XACRO File
+
+A XACRO file must be processed into URDF for it to be useful. This is accomplished by using the xacro program in the xacro package:
+
+	# Generate URDF from a XACRO file
+	rosrun xacro xacro lab2robot.xacro
+	
+	# Generate URDF from a XACRO file and put it in a file.
+	rosrun xacro xacro lab2robot.xacro > urdf_from_xacro.urdf
+
+## View robot in RVIZ using the launch file
 
 To view the robot, first:
 
 	cd catkin_ws
 	source devel/setup.bash
 	roscore &
+	
+To view robot WITH the joint_gui:
+	
+	roslaunch navvis_description display.launch use_xacro:=true &
+	
+To view robot WITHOUT the joint_gui:
+	
+	roslaunch navvis_description display.launch use_xacro:=true joint_gui:= false &
+
+To NOT use .xacro file, delete:
+
+	... use_xacro:=true ...

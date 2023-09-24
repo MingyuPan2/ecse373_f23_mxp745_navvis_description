@@ -410,17 +410,17 @@
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
   <joint name="laser_vert_bottom_laser_vert_top_left_joint" type="fixed">
-    <parent link="laser_vert_bottom"/>
+    <parent link="base"/>
     <child link="laser_vert_top_left"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
   <joint name="laser_vert_bottom_laser_vert_top_right_joint" type="fixed">
-    <parent link="laser_vert_bottom"/>
+    <parent link="base"/>
     <child link="laser_vert_top_right"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
   <joint name="laser_vert_top_right_laser_horiz_joint" type="fixed">
-    <parent link="laser_vert_top_right"/>
+    <parent link="base"/>
     <child link="laser_horiz"/>
     <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.0"/>
   </joint>
