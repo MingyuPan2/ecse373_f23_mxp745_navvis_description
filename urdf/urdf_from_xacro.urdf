@@ -345,7 +345,7 @@
   <joint name="base_wheel_center" type="continuous">
     <parent link="base"/>
     <child link="wheel_center"/>
-    <origin rpy="0.0 0.0 0.0" xyz="0.10 0.0 -0.025"/>
+    <origin rpy="0.0 0.0 0.0" xyz="0.20 0.0 -0.025"/>
     <axis xyz="0 1 0"/>
   </joint>
 </robot>
