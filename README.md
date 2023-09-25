@@ -163,6 +163,6 @@ To view robot WITHOUT the joint_gui:
 	
 	roslaunch navvis_description display.launch joint_gui:=false &
 
-To NOT use .xacro file, add:
+To USE .xacro file, add:
 
-	roslaunch ... use_xacro:=false ... &
+	roslaunch ... use_xacro:=true ... &
