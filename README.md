@@ -149,6 +149,10 @@ A XACRO file must be processed into URDF for it to be useful. This is accomplish
 
 ## View robot in RVIZ using the launch file
 
+FIrst, remember to update the .urdf file from the .xacro file using:
+
+	rosrun xacro xacro lab2robot.xacro > whatever.urdf
+
 To view the robot, first:
 
 	cd catkin_ws
