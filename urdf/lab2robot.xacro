@@ -22,7 +22,7 @@
 	<xacro:laser name="laser_vert_bottom" parent="base" xyz="0.31578 -0.0021 0.5100" rpy="3.1355 -1.3045 0.0025" 			meshes="package://gazebo_plugins/test/multi_robot_scenario/meshes/laser" />
 
 	<xacro:macro name="laser_vert_tops" params="side reflect">
-		<xacro:laser name="laser_vert_${side}" parent="base" xyz="0.3 ${reflect*0.145} 1.845" rpy="${reflect*1.175} 0.63 ${reflect*1.94}"	meshes="package://gazebo_plugins/test/multi_robot_scenario/meshes/laser" />
+		<xacro:laser name="laser_vert_top_${side}" parent="base" xyz="0.3 ${reflect*0.145} 1.845" rpy="${reflect*1.175} 0.63 ${reflect*1.94}"	meshes="package://gazebo_plugins/test/multi_robot_scenario/meshes/laser" />
 	</xacro:macro>
 	
 	<xacro:laser_vert_tops side ="left" reflect ="1" />

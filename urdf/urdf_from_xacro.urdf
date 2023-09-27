@@ -77,13 +77,13 @@
       <visualize>true</visualize>
     </sensor>
   </gazebo>
-  <joint name="base_laser_vert_left_joint" type="fixed">
+  <joint name="base_laser_vert_top_left_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin rpy="1.175 0.63 1.94" xyz="0.3 0.145 1.845"/>
     <parent link="base"/>
-    <child link="laser_vert_left"/>
+    <child link="laser_vert_top_left"/>
   </joint>
-  <link name="laser_vert_left">
+  <link name="laser_vert_top_left">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -102,7 +102,7 @@
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
     </inertial>
   </link>
-  <gazebo reference="laser_vert_left">
+  <gazebo reference="laser_vert_top_left">
     <sensor name="laser" type="ray">
       <pose>0 0 0 0 0 0</pose>
       <ray>
@@ -125,8 +125,8 @@
       </ray>
       <plugin filename="libgazebo_ros_laser.so" name="laser">
         <robotNamespace/>
-        <topicName>laser_vert_left/scan</topicName>
-        <frameName>laser_vert_left</frameName>
+        <topicName>laser_vert_top_left/scan</topicName>
+        <frameName>laser_vert_top_left</frameName>
       </plugin>
       <!--
           <plugin name="laser" filename="libRayPlugin.so" />
@@ -136,13 +136,13 @@
       <visualize>true</visualize>
     </sensor>
   </gazebo>
-  <joint name="base_laser_vert_right_joint" type="fixed">
+  <joint name="base_laser_vert_top_right_joint" type="fixed">
     <axis xyz="0 0 1"/>
     <origin rpy="-1.175 0.63 -1.94" xyz="0.3 -0.145 1.845"/>
     <parent link="base"/>
-    <child link="laser_vert_right"/>
+    <child link="laser_vert_top_right"/>
   </joint>
-  <link name="laser_vert_right">
+  <link name="laser_vert_top_right">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
@@ -161,7 +161,7 @@
       <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
     </inertial>
   </link>
-  <gazebo reference="laser_vert_right">
+  <gazebo reference="laser_vert_top_right">
     <sensor name="laser" type="ray">
       <pose>0 0 0 0 0 0</pose>
       <ray>
@@ -184,8 +184,8 @@
       </ray>
       <plugin filename="libgazebo_ros_laser.so" name="laser">
         <robotNamespace/>
-        <topicName>laser_vert_right/scan</topicName>
-        <frameName>laser_vert_right</frameName>
+        <topicName>laser_vert_top_right/scan</topicName>
+        <frameName>laser_vert_top_right</frameName>
       </plugin>
       <!--
           <plugin name="laser" filename="libRayPlugin.so" />
